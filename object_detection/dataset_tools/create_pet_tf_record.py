@@ -38,7 +38,8 @@ from lxml import etree
 import numpy as np
 import PIL.Image
 import tensorflow as tf
-
+import sys, os
+sys.path.append('/home/danny/Documents/Tensorflow')
 from object_detection.dataset_tools import tf_record_creation_util
 from object_detection.utils import dataset_util
 from object_detection.utils import label_map_util

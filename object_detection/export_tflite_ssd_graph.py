@@ -93,6 +93,9 @@ python object_detection/export_tflite_ssd_graph \
 
 import tensorflow as tf
 from google.protobuf import text_format
+import sys, os
+sys.path.append('/home/danny/Documents/Tensorflow')
+
 from object_detection import export_tflite_ssd_graph_lib
 from object_detection.protos import pipeline_pb2
 
