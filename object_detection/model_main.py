@@ -22,7 +22,7 @@ from absl import flags
 
 import tensorflow as tf
 import sys, os
-sys.path.append('/home/danny/Documents/Tensorflow')
+sys.path.append('/home/techgarage/Tensorflow')
 
 from object_detection import model_hparams
 from object_detection import model_lib

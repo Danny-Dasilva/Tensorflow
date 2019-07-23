@@ -23,7 +23,7 @@ while [[ $# -gt 0 ]]; do
       shift 2 ;;
     --num_eval_steps)
       num_eval_steps=$2
-      shift 2 ;;    
+      shift 2 ;;
     --help)
       usage
       exit 0 ;;
@@ -36,10 +36,10 @@ done
 
 source "$PWD/constants.sh"
 
-mkdir "${TRAIN_DIR}"
+mkdir "/home/techgarage/Tensorflow/Training/Model"
 
-python object_detection/model_main.py \
-  --pipeline_config_path="${CKPT_DIR}/pipeline.config" \
-  --model_dir="${TRAIN_DIR}" \
+python3 object_detection/model_main.py \
+  --pipeline_config_path="/home/techgarage/Tensorflow/Training/CKPT/pipeline.config" \
+  --model_dir="/home/techgarage/Tensorflow/Training/Model" \
   --num_train_steps="${num_training_steps}" \
   --num_eval_steps="${num_eval_steps}"
