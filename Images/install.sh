@@ -1,4 +1,10 @@
-pip3 install virtualenv
+cd /
+sudo apt-get install python-pip
+sudo pip install virtualenv
+mkdir ~/.virtualenvs
+sudo pip install virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+echo '. /usr/local/bin/virtualenvwrapper.sh' >> ~/.bashrc 
 mkvirutalenv objectDetection
 workon objectDetection
 sudo apt --purge autoremove nvidia* -y
@@ -14,9 +20,15 @@ sudo ldconfig
 export PATH=${PATH}:/usr/local/cuda/bin
 echo "Navigate to this URL and download cuDNN for CUDA 10.0\n"
 echo "https://developer.nvidia.com/rdp/cudnn-download\n"
-pause
+function pause(){
+   read -p "$*"
+}
+ 
+# ...
+# call it
+pause 'Press [Enter] key to continue...'
 cd Downloads
-tar -xzvf cudnn-10.0-linux-x64-v7.6.1.34.tgz cuda/
+tar -xzvf cudnn-10.0-linux-x64-v7.6.2.24.tgz cuda/
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
@@ -28,7 +40,14 @@ pip3 install jupyter
 pip3 install matplotlib
 pip3 install pillow
 pip3 install pandas
-git clone https://github.com/Danny-Dasilva/Tensorflow.git
+pip3 install git+https://github.com/waleedka/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI
+cd ..
+git clone https://github.com/tzutalin/labelImg.git
+cd labelImg
+sudo pip3 install -r requirements/requirements-linux-python3.txt
+make qt5py3
+alias labelimg="python3 ~/labelImg/labelImg.py"
+cd ..
 cd Tensorflow
 export TENSORFLOWPATH=${PWD}
 cd ObjectDetectionDeps
