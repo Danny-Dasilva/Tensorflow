@@ -38,6 +38,7 @@ pip3 install jupyter
 pip3 install matplotlib
 pip3 install pillow
 pip3 install pandas
+pip3 install lxml
 #git clone https://github.com/Danny-Dasilva/Tensorflow.git
 #cd Tensorflow
 export TENSORFLOWPATH=${PWD}

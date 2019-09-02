@@ -14,8 +14,6 @@ cp ${TENSORFLOWPATH}/ObjectDetectionDeps/OrganizeImageDirectory.py ${PWD}
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/RenameImageData.py ${PWD}
 
 
-cd put_files_here
-
 mkdir Images
 export IMAGEWORKDIR=${PWD}
 cd Images
@@ -45,10 +43,12 @@ python3 generate_tfrecord.py --csv_input=${IMAGEPATH}/Train_labels.csv --image_d
 python3 generate_tfrecord.py --csv_input=${IMAGEPATH}/Test_labels.csv --image_dir=${TESTINGPATH} --output_path=${IMAGEPATH}/test.record
 
 
-
 mkdir Model
+
 cd Model
+
 export MODEL_DIR=${PWD}
+
 cd ..
 cp ${TENSORFLOWPATH}/Training/CKPT/pipeline.config ${PWD}
 sed -i "s|LABELMAP|${IMAGEWORKDIR}/labelmap.pbtxt|g" pipeline.config
