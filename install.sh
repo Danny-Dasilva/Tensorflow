@@ -14,9 +14,19 @@ sudo ldconfig
 export PATH=${PATH}:/usr/local/cuda/bin
 echo "Navigate to this URL and download cuDNN for CUDA 10.0\n"
 echo "https://developer.nvidia.com/rdp/cudnn-download\n"
-pause
+
+read -p 'Paste the name of the cuDNN tgz file with the tgz extension: ' cdn
+echo
+echo $cdn
+read -p "Is this filename correct (y/n)?" choice
+case "$choice" in 
+  y|Y ) echo "yes";;
+  n|N ) echo "no";;
+  * ) echo "invalid";;
+esac
+
 cd Downloads
-tar -xzvf cudnn-10.0-linux-x64-v7.6.1.34.tgz cuda/
+tar -xzvf $cdn cuda/
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
