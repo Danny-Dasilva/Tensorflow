@@ -18,8 +18,9 @@ import pandas as pd
 import tensorflow as tf
 
 from PIL import Image
-sys.path.append('/home/danny/Documents/Retraining/Tensorflow_Object_Detection/ObjectDetectionDeps')
-#fix this later only need utils file and dependecies
+sys.path.append(os.environ['ObjectDetectionDeps'])
+
+
 from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 

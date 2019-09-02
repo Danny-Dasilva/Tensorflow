@@ -31,9 +31,13 @@ while [[ $# -gt 0 ]]; do
 done
 
 source "$PWD/constants.sh"
-OUTPUT_DIR=/home/danny/Documents/Retraining/Tensorflow_Object_Detection/Training/TFLite
-CKPT_DIR=/home/danny/Documents/Retraining/Tensorflow_Object_Detection/Training/CKPT
-TRAIN_DIR=/home/danny/Documents/Retraining/Tensorflow_Object_Detection/Images/Model
+
+
+OUTPUT_DIR=${TENSORFLOWPATH}/Training/TFLite
+CKPT_DIR=${TENSORFLOWPATH}/Training/CKPT
+TRAIN_DIR=${MODEL_DIR}
+
+
 
 mkdir "${OUTPUT_DIR}"
 
