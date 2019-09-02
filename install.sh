@@ -28,8 +28,8 @@ pip3 install jupyter
 pip3 install matplotlib
 pip3 install pillow
 pip3 install pandas
-git clone https://github.com/Danny-Dasilva/Tensorflow.git
-cd Tensorflow
+#git clone https://github.com/Danny-Dasilva/Tensorflow.git
+#cd Tensorflow
 export TENSORFLOWPATH=${PWD}
 cd ObjectDetectionDeps
 export PYTHONPATH=$PYTHONPATH:${PWD}:${PWD}/slim

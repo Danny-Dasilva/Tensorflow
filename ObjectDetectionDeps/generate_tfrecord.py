@@ -18,7 +18,8 @@ import pandas as pd
 import tensorflow as tf
 
 from PIL import Image
-sys.path.append('/home/techgarage/Tensorflow/')
+sys.path.append('/home/danny/Documents/Retraining/Tensorflow_Object_Detection/ObjectDetectionDeps')
+#fix this later only need utils file and dependecies
 from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 
@@ -49,6 +50,7 @@ def class_text_to_int(row_label):
     try:
         return dictionary[row_label]
     except Exception as e:
+        print('error')
         return None
 
 
@@ -81,7 +83,9 @@ def create_tf_example(group, path):
         ymaxs.append(row['ymax'] / height)
         classes_text.append(row['class'].encode('utf8'))
         classes.append(class_text_to_int(row['class']))
-
+        
+        print(classes)
+        
     tf_example = tf.train.Example(features=tf.train.Features(feature={
         'image/height': dataset_util.int64_feature(height),
         'image/width': dataset_util.int64_feature(width),
