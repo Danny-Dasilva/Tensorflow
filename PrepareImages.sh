@@ -1,8 +1,9 @@
+cd Images
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/OrganizeImageDirectory.py ${PWD}
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/RenameImageData.py ${PWD}
 rm OrganizeImageDirectory.py pipeline.config labelmap.pbtxt xml_to_csv.py generate_tfrecord.py RenameImageData.py
 rm -r Images Model
-cd Images
+
 mkdir Images
 export IMAGEWORKDIR=${PWD}
 cd Images
