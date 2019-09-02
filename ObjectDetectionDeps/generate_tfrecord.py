@@ -43,8 +43,7 @@ def decompileLabelMap():
                 result = i.split('\'')
                 names.append(result[1])
         dictionary = dict(zip(names, ids))
-        #print(dictionary['Brown'])
-        #print(dictionary)
+   
 
 def class_text_to_int(row_label):
     try:
@@ -84,7 +83,6 @@ def create_tf_example(group, path):
         classes_text.append(row['class'].encode('utf8'))
         classes.append(class_text_to_int(row['class']))
         
-        print(classes)
         
     tf_example = tf.train.Example(features=tf.train.Features(feature={
         'image/height': dataset_util.int64_feature(height),
