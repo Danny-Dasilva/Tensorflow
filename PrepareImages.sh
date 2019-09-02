@@ -1,10 +1,5 @@
 
 
-#used in convert_checkpoint_to_edgetpu_tflite.sh
-
-OUTPUT_DIR=/home/danny/Documents/Retraining/Tensorflow_Object_Detection/Training/TFLite
-CKPT_DIR=/home/danny/Documents/Retraining/Tensorflow_Object_Detection/Training/CKPT
-TRAIN_DIR=/home/danny/Documents/Retraining/Tensorflow_Object_Detection/Images/Model
 
 #used in generate_tfrecord.py
 cd ObjectDetectionDeps
@@ -12,7 +7,7 @@ export ObjectDetectionDeps=${PWD}
 cd ..
 
 cd put_files_here
-rm OrganizeImageDirectory.py pipeline.config labelmap.pbtxt xml_to_csv.py generate_tfrecord.py RenameImageData.py
+rm OrganizeImageDirectory.py pipeline.config labelmap.pbtxt xml_to_csv.py generate_tfrecord.py RenameImageData.py Generate_Labelmap.py
 rm -r Images Model
 
 
@@ -40,8 +35,13 @@ python3 RenameImageData.py
 python3 OrganizeImageDirectory.py
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/xml_to_csv.py ${PWD}
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/generate_tfrecord.py ${PWD}
-cp ${TENSORFLOWPATH}/ObjectDetectionDeps/labelmap.pbtxt ${PWD}
+cp ${TENSORFLOWPATH}/ObjectDetectionDeps/Generate_Labelmap.py ${PWD}
+
+
 python3 xml_to_csv.py
+
+python3 Generate_Labelmap.py
+
 
 python3 generate_tfrecord.py --csv_input=${IMAGEPATH}/Train_labels.csv --image_dir=${TRAININGPATH} --output_path=${IMAGEPATH}/train.record
 python3 generate_tfrecord.py --csv_input=${IMAGEPATH}/Test_labels.csv --image_dir=${TESTINGPATH} --output_path=${IMAGEPATH}/test.record
