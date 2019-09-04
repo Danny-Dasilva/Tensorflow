@@ -28,10 +28,10 @@ for label in classes:
     pbtxt_label.write("}\n") 
     pbtxt_label.write("\n")
  
-
+count = 0
 txt_label = open("labels.txt","w") 
 for label in classes:
-    txt_label.write("%s %s" % (count, label)) 
+    txt_label.write("%s %s\n" % (count, label)) 
     count += 1
 
 pbtxt_label.close() 
