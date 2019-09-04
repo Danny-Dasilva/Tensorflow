@@ -18,12 +18,9 @@ until [ "${obs_venv}" == "$obs_input" ] ; do
                     then
                         echo "Overwriding previous obs_venv"
                         grep -v "export obs_venv" $BSHRC > temp && mv temp $BSHRC
-
                         echo "export obs_venv="$obs_venv"" >> $BSHRC 
-                       
                     else
                         echo "export obs_venv="$obs_venv"" >> $BSHRC
-
                 fi
                 break
             else

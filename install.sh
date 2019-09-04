@@ -1,7 +1,6 @@
 read -p 'Write the name your virtual environment: ' obs_input
 echo
 echo $obs_input
-# add chec
 
 source Venv/check_venv.sh
 
