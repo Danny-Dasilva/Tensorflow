@@ -1,6 +1,6 @@
 # pip3 install virtualenv
 # mkvirutalenv objectDetection
-# workon objectDetection
+workon objectDetection
 sudo apt --purge autoremove nvidia* -y
 sudo add-apt-repository ppa:graphics-drivers/ppa -y
 sudo apt update -y
@@ -12,6 +12,7 @@ sudo sh cuda_10.0.130_410.48_linux
 sudo bash -c "echo /usr/local/cuda/lib64/ > /etc/ld.so.conf.d/cuda.conf"
 sudo ldconfig
 export PATH=${PATH}:/usr/local/cuda/bin
+
 echo "Navigate to this URL and download cuDNN for CUDA 10.0\n"
 echo "https://developer.nvidia.com/rdp/cudnn-download\n"
 
@@ -43,8 +44,13 @@ pip3 install pandas
 pip3 install lxml
 #git clone https://github.com/Danny-Dasilva/Tensorflow.git
 #cd Tensorflow
+rm cuda_10.0.130_410.48_linux
+
 export TENSORFLOWPATH=${PWD}
 cd ObjectDetectionDeps
 export PYTHONPATH=$PYTHONPATH:${PWD}:${PWD}/slim
 export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+
+

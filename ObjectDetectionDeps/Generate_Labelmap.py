@@ -18,14 +18,21 @@ classes = list(set(col))
 
 print(classes)
 count = 0
-file1 = open("labelmap.pbtxt","w") 
+pbtxt_label = open("labelmap.pbtxt","w") 
 for label in classes:
     count += 1
-    file1.write("item {\n") 
-    file1.write("  id: %s\n" % (count)) 
-    file1.write("  name: '%s'\n" % (label)) 
+    pbtxt_label.write("item {\n") 
+    pbtxt_label.write("  id: %s\n" % (count)) 
+    pbtxt_label.write("  name: '%s'\n" % (label)) 
     
-    file1.write("}\n") 
-    file1.write("\n")
+    pbtxt_label.write("}\n") 
+    pbtxt_label.write("\n")
  
-file1.close() 
+
+txt_label = open("labels.txt","w") 
+for label in classes:
+    txt_label.write("%s %s" % (count, label)) 
+    count += 1
+
+pbtxt_label.close() 
+txt_label.close()
