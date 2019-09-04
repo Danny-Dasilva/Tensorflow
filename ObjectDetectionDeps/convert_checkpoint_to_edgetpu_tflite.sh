@@ -40,11 +40,11 @@ TRAIN_DIR=${MODEL_DIR}
 # rm "${OUTPUT_DIR}"
 mkdir "${OUTPUT_DIR}"
 
-# fix labels
 
 echo "GENERATING label file..."
-echo "0 Abyssinian" >> "${OUTPUT_DIR}/labels.txt"
-echo "1 american_bulldog" >> "${OUTPUT_DIR}/labels.txt"
+cp ${IMAGEWORKDIR}/labels.txt ${OUTPUT_DIR}
+
+
 
 echo "EXPORTING frozen graph from checkpoint..."
 python3 object_detection/export_tflite_ssd_graph.py \
