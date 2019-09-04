@@ -1,5 +1,5 @@
 #!/bin/bash
-
+workon $obs_venv
 # Exit script on error.
 set -e
 # Echo each command, easier for debugging.

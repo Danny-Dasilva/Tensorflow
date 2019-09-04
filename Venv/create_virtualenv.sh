@@ -15,15 +15,13 @@ echo "Files are here"
 else
 echo "Adding bashrc files"
 mkdir -p $WORKON_HOME
-echo 'WORKON_HOME=~/.Envs' >> ~/.bashrc
+echo 'WORKON_HOME=~/.Envs' >> $BSHRC
 
-echo 'VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3' >> ~/.bashrc
+echo 'VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3' >> $BSHRC
 
-echo 'source ~/.local/bin/virtualenvwrapper.sh' >> ~/.bashrc
-
+echo 'source ~/.local/bin/virtualenvwrapper.sh' >> $BSHRC
 fi
 
-
-
 source ~/.local/bin/virtualenvwrapper.sh
+
 
