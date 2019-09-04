@@ -42,7 +42,7 @@ python3 Generate_Labelmap.py
 # python3 generate_tfrecord.py --csv_input=${IMAGEPATH}/Train_labels.csv --image_dir=${TRAININGPATH} --output_path=${IMAGEPATH}/train.record
 # python3 generate_tfrecord.py --csv_input=${IMAGEPATH}/Test_labels.csv --image_dir=${TESTINGPATH} --output_path=${IMAGEPATH}/test.record
 
-#tee
+
 # mkdir Model
 
 # cd Model
