@@ -34,7 +34,7 @@ until [ "${obs_venv}" == "$obs_input" ] ; do
         mkvirtualenv $obs_input
     fi
 done
-source $BSHRC
+
 echo "WORKING IN OBJECT_DETECTION"
 
 

@@ -23,22 +23,22 @@ sudo bash -c "echo /usr/local/cuda/lib64/ > /etc/ld.so.conf.d/cuda.conf"
 sudo ldconfig
 export PATH=${PATH}:/usr/local/cuda/bin
 
-echo "Navigate to this URL and download cuDNN for CUDA 10.0\n"
-echo "https://developer.nvidia.com/rdp/cudnn-download\n"
+until [ "${authenticate}" = 'y' ] || [ "${authenticate}" = 'Y' ] ; do
 
-read -p 'Paste the name of the cuDNN tgz file with the tgz extension: ' cdn
-echo
+  echo "Navigate to this URL and download cuDNN for CUDA 10.0\n"
+  echo "https://developer.nvidia.com/rdp/cudnn-download\n"
+  echo 
+  read -p 'Paste the name of the cuDNN tgz file with the tgz extension: ' cdn
+  echo
+  echo $cdn
+  read -p "Is this the correct cuDNN tgz file? (y,n): `echo $'\n> '`" authenticate
+done
+
 echo $cdn
-read -p "Is this filename correct (y/n)?" choice
-case "$choice" in 
-  y|Y ) echo "yes";;
-  n|N ) echo "no";;
-  * ) echo "invalid";;
-esac
+
 
 cd Downloads
 tar -xzvf $cdn cuda/
-# weird error
 
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
@@ -52,8 +52,9 @@ pip3 install matplotlib
 pip3 install pillow
 pip3 install pandas
 pip3 install lxml
-#git clone https://github.com/Danny-Dasilva/Tensorflow.git
-#cd Tensorflow
+
+
+# remove cuda install file
 rm cuda_10.0.130_410.48_linux
 
 export TENSORFLOWPATH=${PWD}
