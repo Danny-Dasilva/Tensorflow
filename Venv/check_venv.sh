@@ -1,10 +1,11 @@
 
+#!/bin/bash
 BSHRC=~/.bashrc
 
 
 until [ "${obs_venv}" == "$obs_input" ] ; do
-
-    source ~/.local/bin/virtualenvwrapper.sh
+    venvdir=$(which virtualenvwrapper.sh)
+    source $venvdir
     workon $obs_input
     if  [ "$VIRTUAL_ENV" != "" ]
     then
@@ -30,8 +31,11 @@ until [ "${obs_venv}" == "$obs_input" ] ; do
             fi
     else
         echo "not in venv"
-        ./create_virtualenv.sh
+        my_dir=`dirname $0`
+        sh ./Venv/create_virtualenv.sh
+        echo "create virtualenv"
         mkvirtualenv $obs_input
+        echo "mkvirtualenv env"
     fi
 done
 

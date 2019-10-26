@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo pip3 install virtualenv
 
 sudo pip3 install virtualenvwrapper
@@ -23,6 +24,8 @@ if grep -q "WORKON_HOME" "$BSHRC";
         echo 'VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3' >> $BSHRC
         echo 'source ~/.local/bin/virtualenvwrapper.sh' >> $BSHRC
 fi
-source ~/.local/bin/virtualenvwrapper.sh
+
+venvdir=$(which virtualenvwrapper.sh)
+source $venvdir
 
 
