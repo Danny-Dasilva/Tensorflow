@@ -8,9 +8,6 @@ workon ${obs_venv}
 
 
 
-pip3 install virtualenv
-mkvirutalenv objectDetection
-workon objectDetection
 # sudo apt --purge autoremove nvidia* -y
 # sudo add-apt-repository ppa:graphics-drivers/ppa -y
 # sudo apt update -y
