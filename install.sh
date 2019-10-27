@@ -11,11 +11,11 @@ workon ${obs_venv}
 pip3 install virtualenv
 mkvirutalenv objectDetection
 workon objectDetection
-sudo apt --purge autoremove nvidia* -y
-sudo add-apt-repository ppa:graphics-drivers/ppa -y
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install nvidia-driver-418 -y
+# sudo apt --purge autoremove nvidia* -y
+# sudo add-apt-repository ppa:graphics-drivers/ppa -y
+# sudo apt update -y
+# sudo apt upgrade -y
+# sudo apt install nvidia-driver-418 -y
 sudo apt-get install freeglut3 freeglut3-dev libxi-dev libxmu-dev -y
 wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
 sudo sh cuda_10.0.130_410.48_linux

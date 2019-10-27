@@ -5,7 +5,7 @@ images = []
 count = 0
 names = []
 for filename in os.listdir(path):
-    if filename.endswith('.jpg'):
+    if filename.endswith('.png'):
         count+=1
         images.append(filename.split(".")[0]+".xml")
         tree = ET.parse(filename.split(".")[0]+".xml")
@@ -13,9 +13,9 @@ for filename in os.listdir(path):
         name = root[6][0].text
         if name not in names:
             names.append(name)
-        root[1].text = name+"_"+str(count)+".jpg"
-        root[2].text = path+"/"+name+"_"+str(count)+".jpg"
-        os.rename(path+"/"+filename, path+"/"+name+"_"+str(count)+".jpg")
+        root[1].text = name+"_"+str(count)+".png"
+        root[2].text = path+"/"+name+"_"+str(count)+".png"
+        os.rename(path+"/"+filename, path+"/"+name+"_"+str(count)+".png")
         os.rename(path+"/"+filename.split(".")[0]+".xml", path+"/"+name+"_"+str(count)+".xml")
         tree.write(name+"_"+str(count)+".xml")
 count = 0

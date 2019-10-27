@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 path = os.getcwd()
 images = []
 for filename in os.listdir(path):
-    if filename.endswith('.jpg'):
+    if filename.endswith('.png'):
         images.append(filename)
     random.shuffle(images)
     sizeOfArray=len(images)
