@@ -33,7 +33,7 @@ done
 
 echo $cdn
 
-
+cd ~
 cd Downloads
 tar -xzvf $cdn cuda/
 
