@@ -1,3 +1,8 @@
+dir=$PWD
+
+chmod a+x "$dir"/Venv/check_venv.sh
+chmod a+x "$dir"/Venv/create_virtualenv.sh
+
 read -p 'Write the name your virtual environment: ' obs_input
 echo
 echo $obs_input
@@ -5,6 +10,7 @@ echo $obs_input
 source Venv/check_venv.sh
 
 workon ${obs_venv}
+
 
 
 
@@ -44,7 +50,7 @@ tar -xzvf $cdn cuda/
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-pip3 install tensorflow-gpu=1.15
+pip3 install tensorflow-gpu==1.15
 sudo apt-get install protobuf-compiler python-pil python-lxml python-tk
 pip3 install Cython
 pip3 install contextlib2
