@@ -35,9 +35,10 @@ until [ "${obs_venv}" == "$obs_input" ] ; do
     else
         echo "not in venv"
         my_dir=`dirname $0`
-        bash ./Venv/create_virtualenv.sh
+        sh ./Venv/create_virtualenv.sh
         echo "create virtualenv"
-        mkvirtualenv $obs_input
+        #fix this
+        mkvirtualenv $obs_input --python=/usr/bin/python3
         echo "mkvirtualenv env"
     fi
 done
