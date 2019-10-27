@@ -2,9 +2,12 @@
 #!/bin/bash
 BSHRC=~/.bashrc
 
-
 until [ "${obs_venv}" == "$obs_input" ] ; do
     venvdir=$(which virtualenvwrapper.sh)
+    echo $venvdir
+    echo $venvdir
+    echo $venvdir
+    echo $venvdir
     source $venvdir
     workon $obs_input
     if  [ "$VIRTUAL_ENV" != "" ]
@@ -38,6 +41,7 @@ until [ "${obs_venv}" == "$obs_input" ] ; do
         echo "mkvirtualenv env"
     fi
 done
+
 
 echo "WORKING IN OBJECT_DETECTION"
 

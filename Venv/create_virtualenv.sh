@@ -1,12 +1,13 @@
 #!/bin/bash
-sudo pip3 install virtualenv
+sudo apt install virtualenv
 
 sudo pip3 install virtualenvwrapper
 
 BSHRC=~/.bashrc
 
+VENVPATHH=$(which python3)
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=$VENVPATHH
 
 export WORKON_HOME=~/.Envs
 
@@ -21,10 +22,10 @@ if grep -q "WORKON_HOME" "$BSHRC";
         echo "exporting env variables to bashrc"
         
         echo 'WORKON_HOME=~/.Envs' >> $BSHRC
-        echo 'VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3' >> $BSHRC
+        echo `VIRTUALENVWRAPPER_PYTHON=${VENVPATHH}` >> $BSHRC
         echo 'source ~/.local/bin/virtualenvwrapper.sh' >> $BSHRC
 fi
-
+source $BSHRC
 venvdir=$(which virtualenvwrapper.sh)
 source $venvdir
 
