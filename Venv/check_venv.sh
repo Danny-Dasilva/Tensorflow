@@ -35,7 +35,7 @@ until [ "${obs_venv}" == "$obs_input" ] ; do
     else
         echo "not in venv"
         my_dir=`dirname $0`
-        sh ./Venv/create_virtualenv.sh
+        bash ./Venv/create_virtualenv.sh
         echo "create virtualenv"
         mkvirtualenv $obs_input
         echo "mkvirtualenv env"
