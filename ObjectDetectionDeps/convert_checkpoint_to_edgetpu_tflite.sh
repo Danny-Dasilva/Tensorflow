@@ -35,10 +35,19 @@ done
 
 source "$PWD/constants.sh"
 
+# use constansts .sh  fix
+echo ${TRAIN_DIR}
+echo ${TRAIN_DIR}
+echo ${TRAIN_DIR}
+echo ${TRAIN_DIR}
+echo ${TRAIN_DIR}
+echo ${TRAIN_DIR}
+echo ${TRAIN_DIR}
 
 OUTPUT_DIR=${TENSORFLOWPATH}/Training/TF-Lite
 CKPT_DIR=${TENSORFLOWPATH}/Training/CKPT
-TRAIN_DIR=${MODEL_DIR}
+#  fix
+#TRAIN_DIR=${MODEL_DIR}
 
 # rm "${OUTPUT_DIR}"
 mkdir "${OUTPUT_DIR}"

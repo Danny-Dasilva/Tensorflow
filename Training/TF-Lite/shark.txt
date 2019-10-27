@@ -1,0 +1,8 @@
+0 Crab
+1 shark
+2 Fish
+3 www
+4 Dolphin
+5 Shark
+6 ww
+7 Turtle

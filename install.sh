@@ -1,24 +1,24 @@
-dir=$PWD
+# dir=$PWD
 
-chmod a+x "$dir"/Venv/check_venv.sh
-chmod a+x "$dir"/Venv/create_virtualenv.sh
+# chmod a+x "$dir"/Venv/check_venv.sh
+# chmod a+x "$dir"/Venv/create_virtualenv.sh
 
-read -p 'Write the name your virtual environment: ' obs_input
-echo
-echo $obs_input
+# read -p 'Write the name your virtual environment: ' obs_input
+# echo
+# echo $obs_input
 
-source Venv/check_venv.sh
+# source Venv/check_venv.sh
 
 workon ${obs_venv}
 
 
 
 
-# sudo apt --purge autoremove nvidia* -y
-# sudo add-apt-repository ppa:graphics-drivers/ppa -y
-# sudo apt update -y
-# sudo apt upgrade -y
-# sudo apt install nvidia-driver-418 -y
+sudo apt --purge autoremove nvidia* -y
+sudo add-apt-repository ppa:graphics-drivers/ppa -y
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install nvidia-driver-418 -y
 
 
 
@@ -67,7 +67,7 @@ rm cuda_10.0.130_410.48_linux
 export TENSORFLOWPATH=${PWD}
 cd ObjectDetectionDeps
 export PYTHONPATH=$PYTHONPATH:${PWD}:${PWD}/slim
-export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 

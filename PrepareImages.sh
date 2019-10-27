@@ -64,7 +64,7 @@ sed -i "s|LABELMAP|${IMAGEWORKDIR}/labelmap.pbtxt|g" pipeline.config
 sed -i "s|TRAINRECORD|${IMAGEPATH}/train.record|g" pipeline.config
 sed -i "s|TESTRECORD|${IMAGEPATH}/test.record|g" pipeline.config
 sed -i "s|FINETUNE|${TENSORFLOWPATH}/Training/CKPT/model.ckpt|g" pipeline.config
-export num_training_steps=1200
+export num_training_steps=3000
 echo ${num_training_steps}
 echo "$(tput setaf 9)$(tput setab 3) ${num_training_steps} $(tput sgr 0)"
 echo "$(tput setaf 9)$(tput setab 3) Beginning training $(tput sgr 0)"

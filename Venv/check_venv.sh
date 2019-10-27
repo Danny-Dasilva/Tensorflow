@@ -37,6 +37,7 @@ until [ "${obs_venv}" == "$obs_input" ] ; do
         my_dir=`dirname $0`
         sh ./Venv/create_virtualenv.sh
         echo "create virtualenv"
+        
         #fix this
         mkvirtualenv $obs_input --python=/usr/bin/python3
         echo "mkvirtualenv env"

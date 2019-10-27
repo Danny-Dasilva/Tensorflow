@@ -28,7 +28,8 @@ from object_detection.meta_architectures import faster_rcnn_meta_arch
 from object_detection.utils import variables_helper
 
 import sys, os
-sys.path.append('/home/danny/Documents/Tensorflow/slim/')
+#fix
+sys.path.append('/home/danny/Documents/Tensorflow_Object_Detection/ObjectDetectionDeps/slim/')
 from nets import inception_resnet_v2
 
 slim = tf.contrib.slim
