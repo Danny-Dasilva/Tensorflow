@@ -51,15 +51,16 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 pip3 install tensorflow-gpu==1.15
-sudo apt-get install protobuf-compiler python-pil python-lxml python-tk
-pip3 install Cython
-pip3 install contextlib2
-pip3 install jupyter
-pip3 install matplotlib
-pip3 install pillow
-pip3 install pandas
-pip3 install lxml
+sudo apt-get install protobuf-compiler python-pil python-lxml python-tk -y
+# pip3 install Cython
+# pip3 install contextlib2
 
+# pip3 install matplotlib
+# pip3 install pillow
+# pip3 install pandas
+# pip3 install lxml
+
+pip3 install Cython contextlib2 matplotlib pillow pandas lxml
 
 # remove cuda install file
 rm cuda_10.0.130_410.48_linux
