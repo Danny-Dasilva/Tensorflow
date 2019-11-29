@@ -11,3 +11,5 @@ for filename in os.listdir(path):
         if os.path.splitext(filename)[0] in xml_list
             im = Image.open(filename)
             im.save(os.path.splitext(filename)[0]+ '.png')
+        else:
+            print(filename)
