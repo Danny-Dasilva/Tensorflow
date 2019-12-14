@@ -1,6 +1,6 @@
 #!/bin/bash
 ## This gist contains step by step instructions to install cuda v10.0 and cudnn 7.5 in Ubuntu 18.04
-# test
+
 ### steps ####
 # verify the system has a cuda-capable gpu
 # download and install the nvidia cuda toolkit and cudnn
