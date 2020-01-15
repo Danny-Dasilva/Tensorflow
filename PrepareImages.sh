@@ -55,12 +55,12 @@ cp ${TENSORFLOWPATH}/ObjectDetectionDeps/xml_to_csv.py ${PWD}
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/generate_tfrecord.py ${PWD}
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/Generate_Labelmap.py ${PWD}
 
-python3 xml_to_csv.py
+python3.6 xml_to_csv.py
 
 python3 Generate_Labelmap.py
 
-python3 generate_tfrecord.py --csv_input=${IMAGEPATH}/Train_labels.csv --image_dir=${TRAININGPATH} --output_path=${IMAGEPATH}/train.record
-python3 generate_tfrecord.py --csv_input=${IMAGEPATH}/Test_labels.csv --image_dir=${TESTINGPATH} --output_path=${IMAGEPATH}/test.record
+python3.6 generate_tfrecord.py --csv_input=${IMAGEPATH}/Train_labels.csv --image_dir=${TRAININGPATH} --output_path=${IMAGEPATH}/train.record
+python3.6 generate_tfrecord.py --csv_input=${IMAGEPATH}/Test_labels.csv --image_dir=${TESTINGPATH} --output_path=${IMAGEPATH}/test.record
 
 mkdir Model
 
