@@ -23,8 +23,8 @@ f= open("labelmap.pbtxt","w+")
 for name in names:
     count += 1
     f.write("item {\n")
-    f.write(f"  id: {count}\n")
-    f.write(f"  name: '{name}'\n")
+    f.write("  id: {0}\n".format(count))
+    f.write("  name: '{0}'\n".format(name))
     f.write("}\n")
     f.write('\n')
 f.close()

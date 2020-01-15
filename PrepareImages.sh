@@ -1,11 +1,17 @@
-
 # weird hACK WORKAROUND FOR SH VARIABLES 
 
 eval "$(cat ~/.bashrc | tail -n +10)"
+export TENSORFLOWPATH=${PWD}
+cd ObjectDetectionDeps
+cd ..
+
+export PYTHONPATH=$PYTHONPATH:${PWD}:${PWD}/slim
+export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 
-workon ${obs_venv}
-echo ${obs_venv}
+#workon ${obs_venv}
+#echo ${obs_venv}
 
 
 #used in generate_tfrecord.py
@@ -14,8 +20,10 @@ export ObjectDetectionDeps=${PWD}
 cd ..
 # end tf_record
 
+cp -a put_files_here/. working_img_dir
 
-cd put_files_here
+cd working_img_dir
+ls
 rm OrganizeImageDirectory.py pipeline.config labelmap.pbtxt xml_to_csv.py generate_tfrecord.py RenameImageData.py Generate_Labelmap.py
 rm -r Images Model
 
