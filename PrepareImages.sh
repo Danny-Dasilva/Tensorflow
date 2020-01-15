@@ -19,7 +19,7 @@ cd ObjectDetectionDeps
 export ObjectDetectionDeps=${PWD}
 cd ..
 # end tf_record
-
+ls
 cp -a put_files_here/. working_img_dir
 
 cd working_img_dir
