@@ -19,13 +19,15 @@ cd ObjectDetectionDeps
 export ObjectDetectionDeps=${PWD}
 cd ..
 # end tf_record
-ls
+
+rm -rf working_img_dir
+mkdir working_img_dir
 cp -a put_files_here/. working_img_dir
 
 cd working_img_dir
-ls
-rm OrganizeImageDirectory.py pipeline.config labelmap.pbtxt xml_to_csv.py generate_tfrecord.py RenameImageData.py Generate_Labelmap.py
-rm -r Images Model
+
+#rm OrganizeImageDirectory.py pipeline.config labelmap.pbtxt xml_to_csv.py generate_tfrecord.py RenameImageData.py Generate_Labelmap.py
+#rm -r Images Model
 
 
 echo ${TENSORFLOWPATH}
