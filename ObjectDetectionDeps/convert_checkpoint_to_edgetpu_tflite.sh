@@ -54,7 +54,7 @@ mkdir "${OUTPUT_DIR}"
 
 
 echo "GENERATING label file..."
-cp ${IMAGEWORKDIR}/labels.txt ${OUTPUT_DIR}
+#cp ${IMAGEWORKDIR}/labels.txt ${OUTPUT_DIR}
 
 
 

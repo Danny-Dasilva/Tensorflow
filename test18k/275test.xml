@@ -1,0 +1,26 @@
+<annotation>
+	<folder>testimage</folder>
+	<filename>275test.jpg</filename>
+	<path>/home/tg/testimage/275test.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>football</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>313</xmin>
+			<ymin>175</ymin>
+			<xmax>353</xmax>
+			<ymax>214</ymax>
+		</bndbox>
+	</object>
+</annotation>

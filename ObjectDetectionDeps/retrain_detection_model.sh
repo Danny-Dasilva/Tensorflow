@@ -35,7 +35,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 source "${TENSORFLOWPATH}/ObjectDetectionDeps/constants.sh"
-python ${TENSORFLOWPATH}/ObjectDetectionDeps/object_detection/model_main.py \
+python3 ${TENSORFLOWPATH}/ObjectDetectionDeps/object_detection/model_main.py \
   --pipeline_config_path=${IMAGEWORKDIR}/pipeline.config \
   --model_dir="${MODEL_DIR}" \
   --num_train_steps="${num_training_steps}" \

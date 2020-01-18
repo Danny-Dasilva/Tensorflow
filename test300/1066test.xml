@@ -1,0 +1,26 @@
+<annotation>
+	<folder>first-300</folder>
+	<filename>1066test.jpg</filename>
+	<path>/home/tg/first-300/1066test.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>footbal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>263</xmin>
+			<ymin>228</ymin>
+			<xmax>311</xmax>
+			<ymax>275</ymax>
+		</bndbox>
+	</object>
+</annotation>
