@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>hex_308.png</filename>
+	<path>/home/danny/Documents/past/Tensorflow_Object_Detection/put_files_here/hex_308.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hex</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>136</xmin>
+			<ymin>172</ymin>
+			<xmax>219</xmax>
+			<ymax>86</ymax>
+		</bndbox>
+	</object>
+</annotation>

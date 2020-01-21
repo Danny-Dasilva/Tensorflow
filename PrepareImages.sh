@@ -3,9 +3,12 @@
 
 eval "$(cat ~/.bashrc | tail -n +10)"
 
-
-workon ${obs_venv}
-echo ${obs_venv}
+export TENSORFLOWPATH=${PWD}
+cd ObjectDetectionDeps
+export PYTHONPATH=$PYTHONPATH:${PWD}:${PWD}/slim
+export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+cd ..
 
 
 #used in generate_tfrecord.py
@@ -18,8 +21,10 @@ cd ..
 cd put_files_here
 rm OrganizeImageDirectory.py pipeline.config labelmap.pbtxt xml_to_csv.py generate_tfrecord.py RenameImageData.py Generate_Labelmap.py
 rm -r Images Model
+# cd ..
 
-
+# cp -r test300/* put_files_here/
+# cd put_files_here
 echo ${TENSORFLOWPATH}
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/OrganizeImageDirectory.py ${PWD}
 cp ${TENSORFLOWPATH}/ObjectDetectionDeps/RenameImageData.py ${PWD}
@@ -64,7 +69,7 @@ sed -i "s|LABELMAP|${IMAGEWORKDIR}/labelmap.pbtxt|g" pipeline.config
 sed -i "s|TRAINRECORD|${IMAGEPATH}/train.record|g" pipeline.config
 sed -i "s|TESTRECORD|${IMAGEPATH}/test.record|g" pipeline.config
 sed -i "s|FINETUNE|${TENSORFLOWPATH}/Training/CKPT/model.ckpt|g" pipeline.config
-export num_training_steps=3000
+export num_training_steps=500
 echo ${num_training_steps}
 echo "$(tput setaf 9)$(tput setab 3) ${num_training_steps} $(tput sgr 0)"
 echo "$(tput setaf 9)$(tput setab 3) Beginning training $(tput sgr 0)"

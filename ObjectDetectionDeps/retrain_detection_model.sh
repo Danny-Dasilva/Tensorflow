@@ -33,7 +33,7 @@ while [[ $# -gt 0 ]]; do
       exit 1 ;;
   esac
 done
-
+num_eval_steps=100
 source "${TENSORFLOWPATH}/ObjectDetectionDeps/constants.sh"
 python3 ${TENSORFLOWPATH}/ObjectDetectionDeps/object_detection/model_main.py \
   --pipeline_config_path=${IMAGEWORKDIR}/pipeline.config \
