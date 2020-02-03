@@ -1,16 +1,21 @@
 #!/bin/bash
-sudo apt install virtualenv
+sudo apt install virtualenv -y
 
-sudo pip3 install virtualenvwrapper
+sudo pip3 install virtualenvwrapper -y
 
 BSHRC=~/.bashrc
 
 PY_PTH=$(which python3)
 
-export VIRTUALENVWRAPPER_PYTHON=${VENVPATHH}
-
+export VIRTUALENVWRAPPER_PYTHON=${venv_pth}
+mkdir ~/.Envs
 export WORKON_HOME=~/.Envs
+echo 'VIRTUALENVWRAPPER_PYTHON'
 
+echo `VIRTUALENVWRAPPER_PYTHON=${PY_PTH}`
+echo `VIRTUALENVWRAPPER_PYTHON=${PY_PTH}`
+echo `VIRTUALENVWRAPPER_PYTHON=${PY_PTH}`
+echo `VIRTUALENVWRAPPER_PYTHON=${PY_PTH}`
 
 if grep -q "WORKON_HOME" "$BSHRC";
     then

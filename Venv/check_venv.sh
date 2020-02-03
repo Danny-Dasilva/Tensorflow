@@ -4,7 +4,7 @@ BSHRC=~/.bashrc
 
 until [ "${obs_venv}" == "$obs_input" ] ; do
     venvdir=$(which virtualenvwrapper.sh)
-    echo $venvdir
+    echo '$venvdir'
     echo $venvdir
     echo $venvdir
     echo $venvdir
@@ -45,8 +45,7 @@ until [ "${obs_venv}" == "$obs_input" ] ; do
 done
 
 
-echo "WORKING IN OBJECT_DETECTION"
-
+echo `WORKING IN ${venvdir}`
 
 
 
